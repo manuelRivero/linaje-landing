@@ -11,6 +11,9 @@ import rooster3 from "./../../../assets/images/login/gallo-3.png";
 import bgRooster1 from "./../../../assets/images/login/bg-rooster-1.png";
 import bgRooster2 from "./../../../assets/images/login/bg-rooster-2.png";
 
+import store1 from "./../../../assets/images/login/google.png";
+import store2 from "./../../../assets/images/login/apple.png";
+
 export default function ParallaxComponent() {
   useEffect(() => {
     var scene = document.getElementById("scene");
@@ -20,8 +23,8 @@ export default function ParallaxComponent() {
   }, []);
 
   return (
-    <div style={{height:"100%"}}>
-      <div className="parallax" style={{position:"relative", zIndex:20}}>
+    <div style={{ height: "100%" }}>
+      <div className="parallax" style={{ position: "relative", zIndex: 20 }}>
         <div id="scene">
           <div data-depth="0.4">
             <img className="image2" src={image2} />
@@ -43,9 +46,13 @@ export default function ParallaxComponent() {
           </div>
         </div>
       </div>
-      <div style={{position:"relative", zIndex:10, height:"100%"}}>
+      <div style={{ position: "relative", zIndex: 10, height: "100%" }}>
         <img className="bg-rooster2" src={bgRooster2} />
         <img className="bg-rooster1" src={bgRooster1} />
+        <div className="store-row">
+          <img className="" src={store1} />
+          <img className="" src={store2} />
+        </div>
       </div>
     </div>
   );
