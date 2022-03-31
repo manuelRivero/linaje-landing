@@ -50,6 +50,9 @@ export default function ParallaxComponent() {
         <img className="bg-rooster2" src={bgRooster2} />
         <img className="bg-rooster1" src={bgRooster1} />
         <div className="store-row">
+          <div >
+            <h4>Próximamente en</h4>
+          </div>
           <img className="" src={store1} />
           <img className="" src={store2} />
         </div>

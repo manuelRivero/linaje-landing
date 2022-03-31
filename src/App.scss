@@ -12,15 +12,17 @@
     padding: 80px 1.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-  
+
     @media screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
+      padding: 40px 1.5rem;
     }
   }
   &__title {
     font-family: "Poppins", sans-serif;
     color: white;
     font-size: 64px;
+    padding-top: 0;
     @media screen and (max-width: 1024px) {
       font-size: 46px;
     }
@@ -62,6 +64,11 @@
     display: none;
     @media screen and (max-width: 1024px) {
       display: block;
+      img:first-child {
+        max-width: 300px;
+        display: block;
+        margin: 0 auto;
+      }
     }
   }
   &__infoContainer {
@@ -78,7 +85,6 @@
     display: block;
     margin: auto;
   }
-
 }
 
 .form {
@@ -119,9 +125,11 @@
     }
   }
   &__error {
-    color: white;
+    color: rgb(233, 143, 143);
     margin: 0;
     padding: 0 2rem;
+    font-size: 14px;
+    margin-top: 2.5px;
   }
   &__submit {
     button {
@@ -218,9 +226,16 @@
     position: relative;
     margin-top: 1.5rem;
   }
+  & > div {
+    flex: 1 0 100%;
+    text-align: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
   position: absolute;
   bottom: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;

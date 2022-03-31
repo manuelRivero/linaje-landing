@@ -13,14 +13,20 @@ const schema = yup.object().shape({
   names: yup
     .string()
     .required("Campo obligatorio")
-    .min(3, "Mínimo 3 caracteres"),
-  phone: yup.string().required("Campo obligatorio"),
-  email: yup.string().required("Campo obligatorio").email("Email invalido"),
+    .min(3, "Mínimo 3 caracteres")
+    .max(50, "Máximo 50 caracteres"),
+  phone: yup
+    .string()
+    .required("Campo obligatorio")
+    .matches(/^[0-9]+$/, "Numero inválido")
+    .min(9, "Minimo 9 digitos")
+    .max(15, "Maximo 15 digitos"),
+  email: yup.string().required("Campo obligatorio").email("Email inválido"),
 });
 
 export default function Form() {
   const [isLoading, setIsloading] = useState(false);
-  const [formAlert, setFormAlert] = useState("formulario enviado");
+  const [formAlert, setFormAlert] = useState(null);
 
   const {
     register,
@@ -55,8 +61,9 @@ export default function Form() {
           },
         }
       );
-      if (response.message) {
-        setFormAlert(response.message);
+      const parseresponse = await response.json();
+      if (parseresponse.message) {
+        setFormAlert(parseresponse.message);
         reset();
         setTimeout(() => {
           setFormAlert(null);

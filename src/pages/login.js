@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../components/login/form";
 import Parallax from "../components/login/parallax";
 import bgRooster2 from "../assets/images/login/bg-rooster-2.png";
+import hero from "../assets/images/login/mobile-hero.png";
 
 import { motion } from "framer-motion";
 
@@ -14,7 +15,7 @@ export default function Login() {
         className="login__container"
       >
         <div className="login__mobileHero">
-          {/* <img src={hero} alt="" /> */}
+           <img src={hero} alt="" /> 
           <img className="login__heroRooster" src={bgRooster2} />
         </div>
         <div className="login__infoContainer">
